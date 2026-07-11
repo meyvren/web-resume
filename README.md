@@ -1,4 +1,4 @@
-# Hi there 👋
+# Hi there
 
 ## Live Demo: [https://resume.mkfox.tech/](https://resume.mkfox.tech/)
 
@@ -6,7 +6,7 @@
 
 This is my personal interactive resume designed to showcase my skills and projects. It features a modern dark UI with animated tile backgrounds, horizontal project gallery, and interactive elements throughout.
 
-## 🛠️ Tools & Tech Stack
+## Tools & Tech Stack
 
 - **Core:** Next.js 16, React 19, TypeScript
 - **Styling:** Tailwind CSS v4
@@ -14,14 +14,14 @@ This is my personal interactive resume designed to showcase my skills and projec
 - **Icons:** Lucide React
 - **Integrations:** Nodemailer + Server Actions
 
-## 🗂️ Structure
+## Structure
 
 - **`/` (Home):** Hero section with profile photo, tagline, CTA buttons, and horizontal project gallery with arrow navigation.
 - **`/about`:** Full page about me — skills with progress bars, core values, work experience timeline, and CV download buttons (EN/RU).
 - **`/contact`:** Contact page with form, social links, and quick info.
 - **`not-found.tsx`:** Custom 404 page with humorous error messages and terminal-style decoration.
 
-## 🤪 What I Learned
+## What I Learned
 
 - Deepened my knowledge of Tailwind CSS (complex gradients, grid layouts).
 - Successfully integrated a real-world email service (Resend) using Next.js backend capabilities.
@@ -30,7 +30,7 @@ This is my personal interactive resume designed to showcase my skills and projec
 - Built custom cursor with `requestAnimationFrame` for smooth GPU-accelerated animation.
 - Learned to manage SSR/client hydration mismatches in Next.js.
 
-## 🤔 Future Improvements
+## Future Improvements
 
 - Implementing even smoother, highly complex animations.
 - Adding more micro-interactions for better user engagement.
@@ -38,7 +38,7 @@ This is my personal interactive resume designed to showcase my skills and projec
 - Implementing dark/light theme toggle.
 - Adding blog section.
 
-## 🛜 How to Run Locally
+## How to Run Locally
 
 If you want to run this project on your machine:
 
@@ -70,7 +70,7 @@ If you want to run this project on your machine:
 
 5. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
