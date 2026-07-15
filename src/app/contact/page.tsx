@@ -34,7 +34,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-200 flex flex-col items-center justify-center p-6">
       <div className="max-w-4xl w-full">
         {/* Header */}
         <motion.div
