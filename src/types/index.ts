@@ -7,9 +7,13 @@ export interface ITimelineItem {
   title: string;
   subtitle: string | string[];
   description: string;
+  highlights?: string[];
+  outcome?: string;
   code?: string;
   link?: string;
-  img: string;
+  linkLabel?: 'Live' | 'Demo' | 'Case Study';
+  img?: string;
+  featured?: boolean;
   isInProgress?: boolean;
 }
 
@@ -37,9 +41,9 @@ export interface ISocial {
   icon: string;
 }
 
-export interface ISkill {
-  name: string;
-  level: number;
+export interface ISkillGroup {
+  category: string;
+  technologies: string[];
 }
 
 export interface IValue {

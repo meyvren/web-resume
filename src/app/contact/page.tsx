@@ -87,18 +87,23 @@ export default function ContactPage() {
             <div>
               <h3 className="font-mono text-xl mb-4 text-purple-400">Socials</h3>
               <div className="grid grid-cols-2 gap-4">
-                {socials.map((social) => (
-                  <a
-                    key={social.id}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-purple-500/30 hover:scale-105 transition-all"
-                  >
-                    <span className="text-2xl">{social.icon}</span>
-                    <span className="font-mono text-sm">{social.name}</span>
-                  </a>
-                ))}
+                {socials.map((social) => {
+                  const opensNewTab = social.url.startsWith('https://')
+
+                  return (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target={opensNewTab ? '_blank' : undefined}
+                      rel={opensNewTab ? 'noopener noreferrer' : undefined}
+                      aria-label={`${social.name}${opensNewTab ? ' (opens in a new tab)' : ''}`}
+                      className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-purple-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
+                    >
+                      <span className="text-2xl" aria-hidden="true">{social.icon}</span>
+                      <span className="font-mono text-sm">{social.name}</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
 
@@ -112,11 +117,11 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
                   <Clock className="w-5 h-5 text-purple-500" />
-                  <span>Reply within 24h</span>
+                  <span>Remote B2B contracts</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
                   <Mail className="w-5 h-5 text-purple-500" />
-                  <span>kasionma@gmail.com</span>
+                  <a className="hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400" href="mailto:kasionma@gmail.com">kasionma@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -130,35 +135,38 @@ export default function ContactPage() {
           >
             <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 space-y-4">
               <div>
-                <label className="block font-mono text-sm text-gray-400 mb-2">Name</label>
+                <label htmlFor="contact-name" className="block font-mono text-sm text-gray-400 mb-2">Name</label>
                 <input
+                  id="contact-name"
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus:outline-none transition-colors"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 transition-colors"
                   placeholder="What's your name?"
                   required
                   disabled={isSending}
                 />
               </div>
               <div>
-                <label className="block font-mono text-sm text-gray-400 mb-2">Email</label>
+                <label htmlFor="contact-email" className="block font-mono text-sm text-gray-400 mb-2">Email</label>
                 <input
+                  id="contact-email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus:outline-none transition-colors"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 transition-colors"
                   placeholder="your@email.com"
                   required
                   disabled={isSending}
                 />
               </div>
               <div>
-                <label className="block font-mono text-sm text-gray-400 mb-2">Message</label>
+                <label htmlFor="contact-message" className="block font-mono text-sm text-gray-400 mb-2">Message</label>
                 <textarea
+                  id="contact-message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus:outline-none transition-colors resize-none h-32"
+                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white font-mono focus:border-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 transition-colors resize-none h-32"
                   placeholder="Tell me about your project..."
                   required
                   disabled={isSending}
@@ -167,7 +175,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-400 to-rose-600 rounded-xl py-3 font-mono text-white hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-orange-400 to-rose-600 rounded-xl py-3 font-mono text-white transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
               >
                 {isSending ? (
                   <span className="animate-pulse">Sending...</span>

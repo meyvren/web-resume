@@ -35,22 +35,22 @@ export default function AboutPage() {
           <h1 className="text-5xl md:text-7xl font-mono font-bold mb-4">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-600">Me</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Frontend/FullStack developer from Russia. Building modern web applications with passion.
+          <p className="text-gray-300 text-lg leading-8 max-w-3xl mx-auto">
+            I am an independent full-stack developer focused on production-ready web applications, SaaS dashboards, and business automation. I work across the full delivery cycle: interface development, server logic, databases, testing, deployment, and operational maintenance.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <a
-              href="/cv/en/Michael_Frontend_Developer.pdf"
+              href="/cv/en/Michael_EN.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-400 to-rose-600 rounded-xl font-mono text-white hover:scale-105 transition-transform"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-400 to-rose-600 rounded-xl font-mono text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
               <Download className="w-5 h-5" />
               Download CV (EN)
             </a>
             <a
-              href="/cv/ru/Mikhail_Frontend_Developer.pdf"
+              href="/cv/ru/Michael_RU.pdf"
               download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-xl font-mono text-white hover:border-purple-500/30 hover:scale-105 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-xl font-mono text-white hover:border-purple-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
               <Download className="w-5 h-5" />
               Скачать CV (RU)
@@ -70,21 +70,16 @@ export default function AboutPage() {
             <span className="text-purple-500">#</span> Skills
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skill) => (
-              <motion.div key={skill.name} variants={itemVariant} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
-                <div className="flex justify-between mb-2">
-                  <span className="font-mono text-sm">{skill.name}</span>
-                  <span className="font-mono text-sm text-purple-400">{skill.level}%</span>
-                </div>
-                <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                  <motion.div
-                    className="h-full bg-gradient-to-r from-orange-400 to-rose-600 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                  />
-                </div>
+            {skills.map((group) => (
+              <motion.div key={group.category} variants={itemVariant} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+                <h3 className="font-mono text-lg text-purple-400">{group.category}</h3>
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${group.category} technologies`}>
+                  {group.technologies.map((technology) => (
+                    <li key={technology} className="rounded-md border border-white/10 bg-black/20 px-3 py-1.5 font-mono text-sm text-gray-300">
+                      {technology}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

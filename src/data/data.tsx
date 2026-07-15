@@ -1,4 +1,4 @@
-import { ITimelineItem, ISkill, IValue, ISocial } from "@/types";
+import { ITimelineItem, ISkillGroup, IValue, ISocial } from "@/types";
 import { Briefcase, Code2, Heart, Zap } from "lucide-react";
 
 
@@ -7,11 +7,20 @@ export const petTimelineData: ITimelineItem[] = [
     id: 1,
     category: 'Pet',
     title: 'Freelance CRM',
-    subtitle: ['Next.js 16', 'TypeScript' , 'Prisma ORM', 'SQLite (local)', 'Turso/libSQL (production)', 'NextAuth.js v5', 'Tailwind CSS 4', 'Radix UI' ,'shadcn/ui', 'Recharts', 'Framer Motion', 'Gemini API', 'exchangerate-api.com'],
-    description: 'A modern financial management CRM I built for freelancers to track projects, income, subscriptions, and get AI-powered insights.',
+    subtitle: ['Next.js 16', 'TypeScript', 'Prisma ORM', 'SQLite', 'Auth.js', 'Tailwind CSS 4', 'Radix UI', 'shadcn/ui', 'Recharts', 'Framer Motion', 'Gemini API', 'exchangerate-api.com'],
+    description: 'A production CRM for freelancers to manage projects, income, subscriptions, budgets, and AI-assisted financial analysis.',
+    highlights: [
+      'Secure per-user data isolation and a protected read-only demo workspace',
+      'Project and financial analytics with persistent AI conversations',
+      'AI timeout handling, retries, burst limits, and daily rate limits',
+      'Secure password recovery, automated tests, and a GitHub Actions quality gate',
+    ],
+    outcome: 'Deployed on a Linux VPS with PM2 and Nginx, backed by verified SQLite backups and a public read-only demo.',
     code: 'https://github.com/M1g3l14Ka/freelance-crm',
     link: 'https://crm.mkfox.tech/',
+    linkLabel: 'Demo',
     img:'/petImg/freelance-crm.webp',
+    featured: true,
     isInProgress: false,
   },
   {
@@ -19,10 +28,15 @@ export const petTimelineData: ITimelineItem[] = [
     category: 'Pet',
     title: 'Lite-shop',
     subtitle: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'shadcn/ui', 'Framer Motion', 'Zustand + persist middleware', 'DummyJSON API', 'use-debounce'],
-    description: 'This is a minimalist online store with simulated purchases. I created it as a pet project to improve my skills in modern frontend development, state management, and API interactions. The essence is clear from its name - lightweight, fast, and focused on the shopping experience.',
+    description: 'A lightweight storefront with simulated purchases, persistent cart state, search, filtering, and product data from DummyJSON.',
+    highlights: [
+      'Responsive shopping flow built with React 19 and Next.js 16',
+      'Persistent client-side cart state with Zustand',
+    ],
+    outcome: 'Completed and available as a live, publicly accessible project.',
     code: 'https://github.com/M1g3l14Ka/lite-shop',
     link: 'https://shop.mkfox.tech/',
-    img:'/petImg/lite-shop.webp',
+    linkLabel: 'Live',
     isInProgress: false,
   },
   {
@@ -30,9 +44,15 @@ export const petTimelineData: ITimelineItem[] = [
     category: 'Pet',
     title: 'Seller cars',
     subtitle: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Playwright', 'Resend'],
-    description: 'Premium used cars from South Korea - scraped from ENCAR.com',
+    description: 'A responsive catalogue for browsing used cars from South Korea using data sourced from ENCAR.',
+    highlights: [
+      'Searchable vehicle presentation built with Next.js and TypeScript',
+      'Automated browser coverage with Playwright',
+    ],
+    outcome: 'Completed and deployed at a public project URL.',
     code: 'https://github.com/M1g3l14Ka/sellercars',
     link: 'https://sellercars.mkfox.tech/',
+    linkLabel: 'Live',
     img:'/petImg/million-cars.webp',
     isInProgress: false,
   },
@@ -53,29 +73,9 @@ export const workTimelineData: ITimelineItem[] = [
   {
     id: 1,
     category: 'Work',
-    date: 'July 2023 - July 2024',
-    title: 'PJSC «Rosseti North-West»',
-    subtitle: 'Analytics and monitoring',
-    description: 'Analytics and monitoring of company resources, reporting on the work done, working with databases.',
-    img:'/',
-    link:'/',
-  },
-  {
-    id: 2,
-    category: 'Work',
-    date: 'July 2024 - Mar 2026',
-    title: 'Megafon Retail JSC',
-    subtitle: 'Sales Manager / CRM Operator',
-    description: 'Developed communication skills and worked with internal corporate software under high pressure.',
-    img:'/',
-    link:'/',
-  },
-  {
-    id: 3,
-    category: 'Work',
-    date: 'Sep 2024 - Present',
+    date: 'Jun 2023 - Present',
     title: 'Freelance',
-    subtitle: 'Frontend/FullStack Developer',
+    subtitle: 'FullStack Developer',
     description: 'Development from a simple website to a small CRM system',
     img:'/',
     link:'/',
@@ -103,28 +103,17 @@ export const headerTiles = [
 ];
 
 
-export const hireBtns = [
-  { id: 1, title:'Telegram', url:'https://t.me/M1g3L14Ka' },
-  { id: 2, title:'Vkontakte', url:'https://vk.com/mi4aejl' },
-  { id: 3, title:'GitHub', url:'https://github.com/M1g3L14Ka' }
-]
-
 export const socials: ISocial[] = [
-  { id: 1, name: "Telegram", url: "https://t.me/M1g3L14Ka", icon: "✈️" },
-  { id: 2, name: "VK", url: "https://vk.com/mi4aejl", icon: "💬" },
-  { id: 3, name: "GitHub", url: "https://github.com/M1g3L14Ka", icon: "🐙" },
-  { id: 4, name: "Email", url: "mailto:kasionma@gmail.com", icon: "📧" },
+  { id: 1, name: "GitHub", url: "https://github.com/M1g3L14Ka", icon: "🐙" },
+  { id: 2, name: "Email", url: "mailto:kasionma@gmail.com", icon: "📧" },
+  { id: 3, name: "Telegram", url: "https://t.me/M1g3L14Ka", icon: "✈️" },
 ];
 
-export const skills: ISkill[] = [
-  { name: "Next.js / React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Tailwind CSS", level: 95 },
-  { name: "Node.js / Express", level: 80 },
-  { name: "Prisma ORM", level: 75 },
-  { name: "PostgreSQL / SQLite", level: 70 },
-  { name: "Docker", level: 65 },
-  { name: "Framer Motion", level: 85 },
+export const skills: ISkillGroup[] = [
+  { category: "Frontend", technologies: ["React 19", "Next.js", "TypeScript", "Tailwind CSS"] },
+  { category: "Backend", technologies: ["Server Actions", "Route Handlers", "Auth.js", "Prisma", "Node.js"] },
+  { category: "Data & integrations", technologies: ["SQLite", "REST APIs", "Gemini", "Nodemailer"] },
+  { category: "Testing & delivery", technologies: ["Vitest", "GitHub Actions", "PM2", "Nginx", "Linux VPS"] },
 ];
 
 export const values: IValue[] = [

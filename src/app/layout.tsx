@@ -14,30 +14,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mkfox.tech"),
-  title: "Michael K. | Frontend Developer",
-  description: "Interactive portfolio of a Next.js & React developer specializing in modern web applications.",
+  metadataBase: new URL("https://resume.mkfox.tech"),
+  title: "Michael K. | Full-Stack Next.js Developer",
+  description: "Full-stack Next.js developer building secure SaaS dashboards, internal tools, and business automation.",
   openGraph: {
-    title: "Michael K. | Frontend Developer",
-    description: "Interactive portfolio showcasing Next.js, React & TypeScript projects.",
+    title: "Michael K. | Full-Stack Next.js Developer",
+    description: "Secure SaaS dashboards, internal tools, and business automation built with Next.js.",
     type: "website",
-    url: "https://mkfox.tech/",
+    url: "https://resume.mkfox.tech/",
     siteName: "Michael K. Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Michael K. - Frontend Developer Portfolio",
-      },
-    ],
     locale: "en_US",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Michael K. | Frontend Developer",
-    description: "Interactive portfolio showcasing Next.js, React & TypeScript projects.",
-    images: ["/og-image.png"],
+    card: "summary",
+    title: "Michael K. | Full-Stack Next.js Developer",
+    description: "Secure SaaS dashboards, internal tools, and business automation built with Next.js.",
   },
 };
 
