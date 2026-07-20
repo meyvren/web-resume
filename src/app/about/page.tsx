@@ -1,6 +1,6 @@
 'use client';
 
-import { headerTiles, workTimelineData, skills, values } from "@/data/data";
+import { workTimelineData, skills, values } from "@/data/data";
 import { ITimelineItem } from "@/types";
 import { Download } from "lucide-react";
 import { motion } from "framer-motion";
