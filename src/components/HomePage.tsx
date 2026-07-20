@@ -3,13 +3,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { IHeaderTiles, ITimelineItem } from "@/types"
+import { ITimelineItem } from "@/types"
 import { BorderTrail } from "@/components/motion-primitives/border-trail"
-import TileBackground from "@/components/TileBackground"
-import { ArrowRight, Code2, Download, ExternalLink, Mail } from "lucide-react"
+import { ArrowRight, Code2, ExternalLink, Mail } from "lucide-react"
 
 interface HomePageProps {
-    headerTiles: IHeaderTiles[];
     projects: ITimelineItem[];
 }
 
@@ -18,21 +16,23 @@ const interactiveClass = "focus-visible:outline-none focus-visible:ring-2 focus-
 function ProjectCard({ project }: { project: ITimelineItem }) {
     const technologies = Array.isArray(project.subtitle) ? project.subtitle : [project.subtitle]
     const visibleTechnologies = technologies.slice(0, project.featured ? 8 : 6)
+    const usesWidePreview = project.preview?.layout === 'wide'
 
     return (
         <article
-            className={`overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors hover:border-purple-500/30 ${
-                project.featured ? 'lg:col-span-2 lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]' : ''
+            className={`glass-panel overflow-hidden rounded-2xl border transition-colors hover:border-purple-500/40 ${
+                project.featured ? `lg:col-span-2 ${usesWidePreview ? '' : 'lg:grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]'}` : ''
             }`}
         >
-            <div className={`relative bg-gray-900 ${project.featured ? 'min-h-64 lg:min-h-full' : 'h-52'}`}>
+            <div className={`project-preview relative ${usesWidePreview ? 'aspect-[16/9] sm:aspect-[2/1]' : project.featured ? 'min-h-64 lg:min-h-full' : 'h-52'}`}>
                 {project.img && project.img !== '/' ? (
                     <Image
                         src={project.img}
                         alt={`${project.title} interface preview`}
                         fill
-                        sizes={project.featured ? "(max-width: 1024px) 100vw, 550px" : "(max-width: 768px) 100vw, 550px"}
-                        className="object-cover"
+                        sizes={usesWidePreview && project.featured ? "(max-width: 1280px) 100vw, 1152px" : project.featured ? "(max-width: 1024px) 100vw, 550px" : "(max-width: 768px) 100vw, 550px"}
+                        className={project.preview?.fit === 'contain' ? 'object-contain' : 'object-cover'}
+                        style={{ objectPosition: project.preview?.position ?? 'center' }}
                     />
                 ) : (
                     <div className="flex h-full min-h-52 items-center justify-center bg-gradient-to-br from-orange-500/10 to-purple-500/10 px-6 text-center font-mono text-xl text-gray-400">
@@ -56,7 +56,7 @@ function ProjectCard({ project }: { project: ITimelineItem }) {
                 <p className="mt-3 text-sm leading-6 text-gray-300">{project.description}</p>
 
                 {project.highlights && (
-                    <ul className="mt-5 space-y-2 text-sm text-gray-400">
+                    <ul className="mt-5 space-y-2 text-sm text-gray-300">
                         {project.highlights.map((highlight) => (
                             <li key={highlight} className="flex gap-3">
                                 <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400" />
@@ -80,7 +80,7 @@ function ProjectCard({ project }: { project: ITimelineItem }) {
                         </span>
                     ))}
                     {technologies.length > visibleTechnologies.length && (
-                        <span className="px-1 py-1 font-mono text-xs text-gray-500">
+                        <span className="px-1 py-1 font-mono text-xs text-gray-400">
                             +{technologies.length - visibleTechnologies.length} more
                         </span>
                     )}
@@ -117,12 +117,11 @@ function ProjectCard({ project }: { project: ITimelineItem }) {
     )
 }
 
-export default function HomePage({ headerTiles, projects }: HomePageProps) {
+export default function HomePage({ projects }: HomePageProps) {
     const completedProjects = projects.filter((project) => !project.isInProgress)
 
     return (
         <div className="relative">
-            <TileBackground headerTiles={headerTiles} />
 
             <section className="relative z-10 flex min-h-[calc(100svh-5rem)] items-center px-6 py-16" aria-labelledby="hero-title">
                 <motion.div
@@ -132,7 +131,6 @@ export default function HomePage({ headerTiles, projects }: HomePageProps) {
                     className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]"
                 >
                     <div className="order-2 text-center lg:order-1 lg:text-left">
-                        <p className="mb-4 font-mono text-sm uppercase tracking-[0.2em] text-orange-300">Michael K.</p>
                         <h1 id="hero-title" className="text-5xl font-mono font-semibold leading-[1.05] sm:text-6xl md:text-7xl">
                             Full-Stack <span className="bg-gradient-to-r from-orange-400 to-rose-600 bg-clip-text text-transparent">Next.js</span> Developer
                         </h1>

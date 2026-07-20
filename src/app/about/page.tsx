@@ -1,6 +1,5 @@
 'use client';
 
-import TileBackground from "@/components/TileBackground";
 import { headerTiles, workTimelineData, skills, values } from "@/data/data";
 import { ITimelineItem } from "@/types";
 import { Download } from "lucide-react";
@@ -22,7 +21,6 @@ const itemVariant = {
 export default function AboutPage() {
   return (
     <div className="relative min-h-screen">
-      <TileBackground headerTiles={headerTiles} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-12">
         {/* Hero Section */}
@@ -71,7 +69,7 @@ export default function AboutPage() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((group) => (
-              <motion.div key={group.category} variants={itemVariant} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <motion.div key={group.category} variants={itemVariant} className="glass-panel border rounded-xl p-6">
                 <h3 className="font-mono text-lg text-purple-400">{group.category}</h3>
                 <ul className="mt-4 flex flex-wrap gap-2" aria-label={`${group.category} technologies`}>
                   {group.technologies.map((technology) => (
@@ -101,11 +99,11 @@ export default function AboutPage() {
               <motion.div
                 key={value.title}
                 variants={itemVariant}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+                className="glass-panel border rounded-xl p-6 hover:border-purple-500/40 transition-colors"
               >
                 <div className="text-purple-400 mb-3">{value.icon}</div>
                 <h3 className="font-mono text-lg mb-2">{value.title}</h3>
-                <p className="text-gray-400 text-sm">{value.desc}</p>
+                <p className="text-gray-300 text-sm">{value.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -126,16 +124,16 @@ export default function AboutPage() {
               <motion.div
                 key={item.id}
                 variants={itemVariant}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/30 transition-colors"
+                className="glass-panel border rounded-xl p-6 hover:border-purple-500/40 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
                   <div>
                     <h3 className="font-mono text-lg text-white">{item.title}</h3>
                     <p className="text-purple-400 text-sm">{item.subtitle}</p>
                   </div>
-                  <span className="text-gray-500 text-sm font-mono">{item.date}</span>
+                  <span className="text-gray-400 text-sm font-mono">{item.date}</span>
                 </div>
-                <p className="text-gray-400 text-sm mt-3">{item.description}</p>
+                <p className="text-gray-300 text-sm mt-3">{item.description}</p>
               </motion.div>
             ))}
           </div>

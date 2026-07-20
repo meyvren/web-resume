@@ -15,17 +15,16 @@ export interface ITimelineItem {
   img?: string;
   featured?: boolean;
   isInProgress?: boolean;
+  preview?: {
+    fit: 'cover' | 'contain';
+    layout?: 'wide';
+    position?: 'center' | 'top';
+  };
 }
 
 export interface IHeaderTitleBtns {
   id: string;
   label: string;
-}
-
-export interface IHeaderTiles {
-  id: number;
-  src: string;
-  alt: string;
 }
 
 export interface ILinkBtns {

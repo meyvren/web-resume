@@ -97,7 +97,7 @@ export default function ContactPage() {
                       target={opensNewTab ? '_blank' : undefined}
                       rel={opensNewTab ? 'noopener noreferrer' : undefined}
                       aria-label={`${social.name}${opensNewTab ? ' (opens in a new tab)' : ''}`}
-                      className="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:border-purple-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
+                      className="glass-panel flex items-center gap-3 border rounded-xl p-4 hover:border-purple-500/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
                     >
                       <span className="text-2xl" aria-hidden="true">{social.icon}</span>
                       <span className="font-mono text-sm">{social.name}</span>
@@ -133,9 +133,9 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 space-y-4">
+            <form onSubmit={handleSubmit} className="glass-panel border rounded-xl p-6 space-y-4">
               <div>
-                <label htmlFor="contact-name" className="block font-mono text-sm text-gray-400 mb-2">Name</label>
+                <label htmlFor="contact-name" className="block font-mono text-sm text-gray-300 mb-2">Name</label>
                 <input
                   id="contact-name"
                   type="text"
@@ -148,7 +148,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-email" className="block font-mono text-sm text-gray-400 mb-2">Email</label>
+                <label htmlFor="contact-email" className="block font-mono text-sm text-gray-300 mb-2">Email</label>
                 <input
                   id="contact-email"
                   type="email"
@@ -161,7 +161,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label htmlFor="contact-message" className="block font-mono text-sm text-gray-400 mb-2">Message</label>
+                <label htmlFor="contact-message" className="block font-mono text-sm text-gray-300 mb-2">Message</label>
                 <textarea
                   id="contact-message"
                   value={formData.message}
