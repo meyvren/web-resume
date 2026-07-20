@@ -90,22 +90,6 @@ export const headerTitleBtns = [
   { id: 'Work', label: 'Work' },
 ];
 
-
-export const headerTiles = [
-  { id: 1, src: '/tilesImg/html.webp', alt: 'HTML' },
-  { id: 2, src: '/tilesImg/css.webp', alt: 'CSS' },
-  { id: 3, src: '/tilesImg/js.webp', alt: 'JavaScript' },
-  { id: 4, src: '/tilesImg/typeScript.webp', alt: 'TypeScript' },
-  { id: 5, src: '/tilesImg/react.webp', alt: 'React' },
-  { id: 6, src: '/tilesImg/next.webp', alt: 'Next.js' },
-  { id: 7, src: '/tilesImg/tailwind.webp', alt: 'Tailwind' },
-  { id: 8, src: '/tilesImg/gitHub.webp', alt: 'GitHub' },
-  { id: 9, src: '/tilesImg/docker.webp', alt: 'Docker' },
-  { id: 10, src: '/tilesImg/node.webp', alt: 'Node.js' },
-  { id: 11, src: '/tilesImg/vuejs.webp', alt: 'Vue.js' },
-];
-
-
 export const socials: ISocial[] = [
   { id: 1, name: "GitHub", url: "https://github.com/M1g3L14Ka", icon: "🐙" },
   { id: 2, name: "Email", url: "mailto:kasionma@gmail.com", icon: "📧" },
