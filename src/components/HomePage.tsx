@@ -197,7 +197,7 @@ export default function HomePage({ projects }: HomePageProps) {
                     </div>
                     <div className="grid gap-6 lg:grid-cols-2">
                         {completedProjects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
+                            <ProjectCard key={project.id} project={project}/>
                         ))}
                     </div>
                 </div>
