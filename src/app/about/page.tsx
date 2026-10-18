@@ -38,7 +38,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <a
-              href="/cv/en/Michael_EN.pdf"
+              href="/cv/en/Michael.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-400 to-rose-600 rounded-xl font-mono text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
@@ -46,7 +46,7 @@ export default function AboutPage() {
               Download CV (EN)
             </a>
             <a
-              href="/cv/ru/Michael_RU.pdf"
+              href="/cv/ru/Михаил.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 rounded-xl font-mono text-white hover:border-purple-500/30 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
