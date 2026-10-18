@@ -16,7 +16,7 @@ export const petTimelineData: ITimelineItem[] = [
       'Secure password recovery, automated tests, and a GitHub Actions quality gate',
     ],
     outcome: 'Deployed on a Linux VPS with PM2 and Nginx, backed by verified SQLite backups and a public read-only demo.',
-    code: 'https://github.com/M1g3l14Ka/freelance-crm',
+    code: 'https://github.com/meyvren/freelance-crm',
     link: 'https://crm.mkfox.tech/',
     linkLabel: 'Demo',
     img:'/petImg/crm.webp',
@@ -35,7 +35,7 @@ export const petTimelineData: ITimelineItem[] = [
       'Persistent client-side cart state with Zustand',
     ],
     outcome: 'Completed and available as a live, publicly accessible project.',
-    code: 'https://github.com/M1g3l14Ka/shop',
+    code: 'https://github.com/meyvren/shop',
     link: 'https://shop.mkfox.tech/',
     img:'/petImg/shop.webp',
     preview: { fit: 'contain', layout: 'wide', position: 'top' },
@@ -53,23 +53,12 @@ export const petTimelineData: ITimelineItem[] = [
       'Automated browser coverage with Playwright',
     ],
     outcome: 'Completed and deployed at a public project URL.',
-    code: 'https://github.com/M1g3l14Ka/sellercars',
+    code: 'https://github.com/meyvren/sellercars',
     link: 'https://sellercars.mkfox.tech/',
     linkLabel: 'Live',
     img:'/petImg/million-cars.webp',
     isInProgress: false,
-  },
-  {
-    id: 4,
-    category: 'Pet',
-    title: 'The Nexus Portal',
-    subtitle: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'TypeScript', 'Framer Motion'],
-    description: 'Creative portal with complex animations, glassmorphism UI and interactive background tiles.',
-    code: 'https://github.com/M1g3l14Ka/the-nexus-portal',
-    link: '/',
-    img:'/petImg/nexus-portal.webp',
-    isInProgress: true,
-  },
+  }
 ];
 
 export const workTimelineData: ITimelineItem[] = [
@@ -91,9 +80,9 @@ export const headerTitleBtns = [
 ];
 
 export const socials: ISocial[] = [
-  { id: 1, name: "GitHub", url: "https://github.com/M1g3L14Ka", icon: "🐙" },
+  { id: 1, name: "GitHub", url: "https://github.com/meyvren", icon: "🐙" },
   { id: 2, name: "Email", url: "mailto:kasionma@gmail.com", icon: "📧" },
-  { id: 3, name: "Telegram", url: "https://t.me/M1g3L14Ka", icon: "✈️" },
+  { id: 3, name: "Telegram", url: "https://t.me/meyvren", icon: "✈️" },
 ];
 
 export const skills: ISkillGroup[] = [
